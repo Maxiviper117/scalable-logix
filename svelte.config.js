@@ -2,6 +2,8 @@ import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const basePath = process.env.BASE_PATH ?? '';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
@@ -17,7 +19,7 @@ const config = {
 			strict: false
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+			base: basePath
 		},
 		router: {
 			type: 'hash',

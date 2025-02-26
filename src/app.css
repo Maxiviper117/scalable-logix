@@ -1,1 +1,37 @@
 @import 'tailwindcss';
+@import 'tailwindcss-intersect';
+@import 'tailwindcss-animated';
+
+/* @theme {
+    --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 2.5vw, 1rem);
+    --text-base: clamp(1rem, 3vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 3.5vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 4vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 5vw, 2rem);
+    --text-3xl: clamp(1.875rem, 6vw, 2.5rem);
+} */
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        @apply box-border;
+    }
+
+    html {
+        @apply text-base;
+    }
+
+    body {
+        @apply bg-gray-100 text-gray-900;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+
+    a {
+        @apply text-blue-600 hover:text-blue-800;
+    }
+}

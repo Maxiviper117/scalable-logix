@@ -1,27 +1,51 @@
-<script>
+<script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
+	import { onMount } from 'svelte';
 
+	// Convert skills array into object array with IDs
 	const skills = [
-		'JavaScript',
-		'TypeScript',
-		'Svelte',
-		'Sveltekit',
-		'Node.js',
-		'Tailwind CSS',
-		'HTML',
-		'CSS',
-		'PostgreSQL',
-		'Drizzle ORM',
-		'Prisma ORM'
+		{ id: 1, name: 'JavaScript' },
+		{ id: 2, name: 'TypeScript' },
+		{ id: 3, name: 'Svelte' },
+		{ id: 4, name: 'Sveltekit' },
+		{ id: 5, name: 'Node.js' },
+		{ id: 6, name: 'Tailwind CSS' },
+		{ id: 7, name: 'HTML' },
+		{ id: 8, name: 'CSS' },
+		{ id: 9, name: 'PostgreSQL' },
+		{ id: 10, name: 'Drizzle ORM' },
+		{ id: 11, name: 'Prisma ORM' }
 	];
+
+	// Track active skill ID with proper typing
+	let activeSkillId = $state<number | null>(null);
+
+	onMount(() => {
+		const animateSkills = () => {
+			// Get random skill ID (different from current active ID)
+			let randomId: number;
+			do {
+				randomId = skills[Math.floor(Math.random() * skills.length)].id;
+			} while (randomId === activeSkillId && skills.length > 1);
+
+			// Set new active ID
+			activeSkillId = randomId;
+
+			// Set next animation after random delay (between 1 and 3 seconds)
+			setTimeout(animateSkills, 2000);
+		};
+
+		// Start the animation cycle
+		animateSkills();
+	});
 </script>
 
 <section class="flex min-h-screen items-center px-4 py-12 text-gray-100">
 	<div class="container mx-auto max-w-5xl">
 		<div class="flex flex-col gap-12">
 			<!-- Hero section -->
-			<div class="text-center space-y-8">
+			<div class="space-y-8 text-center">
 				<h1
 					class="mb-6 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-[clamp(3rem,9vw,120px)] font-bold text-transparent"
 				>
@@ -80,11 +104,14 @@
 					Technologies
 				</h2>
 				<div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-					{#each skills as skill}
+					{#each skills as skill (skill.id)}
 						<div
-							class="bg-card-bg hover:bg-card-hover flex items-center justify-center rounded-lg p-4 transition-all"
+							class={[
+								'bg-card-bg flex items-center justify-center rounded-lg p-4 transition-all hover:bg-card-hover',
+								skill.id === activeSkillId ? 'bg-card-hover' : ''
+							]}
 						>
-							<span class="text-xl font-semibold text-indigo-300">{skill}</span>
+							<span class="text-xl font-semibold text-indigo-300">{skill.name}</span>
 						</div>
 					{/each}
 				</div>
@@ -104,3 +131,4 @@
 		</div>
 	</div>
 </section>
+

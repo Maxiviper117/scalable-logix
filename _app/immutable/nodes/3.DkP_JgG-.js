@@ -1,1 +1,0 @@
-import{t as r,a as e}from"../chunks/DNvB9Fcr.js";var t=r('<section><iframe aria-label="Scalable Logix Contact Form" frameborder="0" style="height:800px;width:99%;border:none;" src="https://forms.zohopublic.com/davidgonsalves2/form/ContactUs/formperma/kXQbxHB7veB2TrLwryD__KRqHIFzU3z0nxa9KTDfKpQ"></iframe></section>');function s(o,n){var a=t();e(o,a)}export{s as component};

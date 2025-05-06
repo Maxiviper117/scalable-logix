@@ -3,7 +3,7 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import { onNavigate } from '$app/navigation';
 
-	export const prerender = true;
+	
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { assetsRoutes } from '$lib/assets_routes';
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
 
 	// Portfolio page
@@ -11,7 +12,7 @@
 		{
 			title: 'Bluntbox.co.za',
 			description: 'A Cannabis landing page for Bluntbox, a cannabis membership site.',
-			image: '/images/Screenshot_bluntbox.co.za.jpeg',
+			image: assetsRoutes.portfolio.screenshot_bluntbox,
 			link: 'https://bluntbox.co.za',
 			tech: ['Sveltekit', 'Tailwind CSS', 'Node Mailer', 'TypeScript', 'Zod Validation']
 		},
@@ -19,9 +20,16 @@
 			title: 'Top Rental',
 			description:
 				'A local car leasing company with a custom-built website and admin panel for self managing vehicle listings easily.',
-			image: 'https://picsum.photos/seed/meow/800/500',
-			link: '/project-2',
-			tech: ['Sveltekit', 'Tailwind CSS', 'Drizzle ORM', 'PostgreSQL', 'Zod Validation','S3 Storage']
+			image: assetsRoutes.portfolio.screenshot_toprental,
+			link: 'https://toprental.co.za',
+			tech: [
+				'Sveltekit',
+				'Tailwind CSS',
+				'Drizzle ORM',
+				'SQlite',
+				'Zod Validation',
+				'S3 Storage'
+			]
 		}
 	];
 </script>
@@ -34,7 +42,7 @@
 	tech: string[]
 )}
 	<div
-		class="bg-card-bg hover:bg-card-hover row-span-5 grid grid-rows-subgrid rounded-lg p-6 transition-all group"
+		class="bg-card-bg hover:bg-card-hover group row-span-5 grid grid-rows-subgrid rounded-lg p-6 transition-all"
 	>
 		<h3 class="mb-2 text-xl font-semibold text-indigo-300">{title}</h3>
 		<p class="text-gray-400">{description}</p>
@@ -49,7 +57,9 @@
 			{#if tech}
 				<ul class="mt-2 flex flex-wrap gap-2">
 					{#each tech as item}
-						<li class="bg-card-hover rounded-full px-3 py-1 text-sm font-semibold text-gray-300 group-hover:bg-background">
+						<li
+							class="bg-card-hover group-hover:bg-background rounded-full px-3 py-1 text-sm font-semibold text-gray-300"
+						>
 							{item}
 						</li>
 					{/each}

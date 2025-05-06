@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"homepage": "https://maxiviper117.github.io/scalable-logix/",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -13,7 +14,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"predeploy": "pnpm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.7",
@@ -47,6 +49,7 @@
 		]
 	},
 	"dependencies": {
+		"gh-pages": "^6.3.0",
 		"lucide-svelte": "^0.483.0",
 		"tailwindcss-animated": "^2.0.0",
 		"tailwindcss-intersect": "^2.2.0"

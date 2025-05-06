@@ -18,4 +18,7 @@
 	let { children } = $props();
 </script>
 
-{@render children()}
+<Nav />
+<main class="bg-background min-h-screen">
+	{@render children()}
+</main>

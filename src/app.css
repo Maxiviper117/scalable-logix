@@ -2,36 +2,71 @@
 @import 'tailwindcss-intersect';
 @import 'tailwindcss-animated';
 
-/* @theme {
-    --text-xs: clamp(0.75rem, 2vw, 0.875rem);
-    --text-sm: clamp(0.875rem, 2.5vw, 1rem);
-    --text-base: clamp(1rem, 3vw, 1.125rem);
-    --text-lg: clamp(1.125rem, 3.5vw, 1.25rem);
-    --text-xl: clamp(1.25rem, 4vw, 1.5rem);
-    --text-2xl: clamp(1.5rem, 5vw, 2rem);
-    --text-3xl: clamp(1.875rem, 6vw, 2.5rem);
-} */
+@theme {
+	/* --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+	--text-sm: clamp(0.875rem, 2.5vw, 1rem);
+	--text-base: clamp(1rem, 3vw, 1.125rem);
+	--text-lg: clamp(1.125rem, 3.5vw, 1.25rem);
+	--text-xl: clamp(1.25rem, 4vw, 1.5rem);
+	--text-2xl: clamp(1.5rem, 5vw, 2rem);
+	--text-3xl: clamp(1.875rem, 6vw, 2.5rem); */
+	/* Base colors */
+	--color-background: #111827; /* bg-gray-900 */
+	--color-text-light: #f3f4f6; /* text-gray-100 */
+
+	/* Gradient used on headings */
+	--color-gradient-start: #6366f1; /* indigo-500 */
+	--color-gradient-end: #8b5cf6; /* purple-600 */
+
+	/* Button and accent colors */
+	--color-button-bg: #4f46e5; /* indigo-600 */
+	--color-button-hover-shadow: rgba(79, 70, 229, 0.3);
+
+	/* Card colors */
+	--color-card-bg: #1f2937; /* bg-gray-800 */
+	--color-card-hover: #374151; /* hover:bg-gray-700 */
+	--color-card-text: #d1d5db; /* text-gray-300 */
+
+	/* Heading colors */
+	--color-heading: #818cf8; /* text-indigo-400 */
+	--color-subheading: #90caf9; /* text-indigo-300 */
+
+	/* Footer */
+	--color-footer-text: #6b7280; /* text-gray-500 */
+
+	/* Theme colors based on page usage */
+	/* Following 60-30-10 color rule */
+	--color-primary: #111827; /* 60% of the page */
+	--color-secondary: #1f2937; /* 30% of the page */
+	--color-accent: #4f46e5; /* 10% of the page */
+	--color-tertiary: #818cf8; /* Tertiary color for headings */
+}
 
 @layer base {
-    *,
-    *::before,
-    *::after {
-        @apply box-border;
-    }
+	*,
+	*::before,
+	*::after {
+		@apply box-border;
+	}
 
-    html {
-        @apply text-base;
-    }
+	html {
+		@apply text-base;
+	}
 
-    body {
-        @apply bg-gray-100 text-gray-900;
-    }
+	body {
+		@apply bg-gray-100 text-gray-900;
+	}
 
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-bold;
-    }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold;
+	}
 
-    a {
-        @apply text-blue-600 hover:text-blue-800;
-    }
+	a {
+		@apply text-blue-600 hover:text-blue-800;
+	}
 }

@@ -126,8 +126,7 @@
 				<ButtonLink href="/#/contact" text="Let's Talk" />
 			</div>
 
-			<!-- Footer -->
-			<Footer />
+		
 		</div>
 	</div>
 </section>

@@ -11,7 +11,7 @@
 <nav class="bg-background">
 	<ul class="flex items-center justify-center gap-10 p-4 text-xl">
 			{@render navLink('Home', '/')}
-			{@render navLink('Portfolio', '/#/portfolio')}
+			<!-- {@render navLink('Portfolio', '/#/portfolio')} -->
 			{@render navLink('Contact', '/#/contact')}
 		</ul>
 </nav>

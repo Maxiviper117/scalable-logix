@@ -2,14 +2,30 @@
 	import { X } from 'lucide-svelte';
 </script>
 
+{#snippet policyLinks(href: string, text: string)}
+	<a
+		{href}
+		class="text-text-light hover:shadow-button-hover-shadow inline-block rounded-lg bg-gradient-to-r from-purple-600 to-indigo-500 px-8 py-3 font-bold uppercase shadow-lg transition-all duration-300 hover:scale-105 hover:bg-indigo-700 active:scale-95"
+	>
+		{text}
+	</a>
+{/snippet}
 <footer
-	class="mt-12 flex flex-col items-center justify-center gap-4 text-center text-sm text-gray-500"
+	class="flex flex-col items-center justify-center gap-4 py-12 text-center text-sm text-gray-500"
 >
 	<p>
 		&copy;
 		{new Date().getFullYear()}
 		Scalable Logix. All rights reserved.
 	</p>
+
+	<div class="mt-2 flex flex-wrap justify-center gap-4">
+		{@render policyLinks('/#/terms-of-service', 'Terms of Service')}
+
+		{@render policyLinks('/#/privacy-policy', 'Privacy Policy')}
+
+		{@render policyLinks('/#/refund-policy', 'Refund Policy')}
+	</div>
 	<!-- Social Links -->
 	<div class="flex items-center justify-center">
 		<div class="rounded bg-white p-2">

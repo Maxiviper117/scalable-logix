@@ -2,8 +2,7 @@
 	import '../app.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import { onNavigate } from '$app/navigation';
-
-	
+	import Footer from '$lib/components/Footer.svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -19,6 +18,8 @@
 </script>
 
 <Nav />
-<main class="bg-background min-h-screen">
+<main class=" min-h-screen">
 	{@render children()}
 </main>
+<!-- Footer -->
+<Footer />
